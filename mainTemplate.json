@@ -14,8 +14,7 @@
         "deploymentUris": {
             "managementGroups": "[uri(deployment().properties.templateLink.uri, 'nestedtemplates/mgmtGroups.json')]"
             // "strgAccounts": "[uri(deployment().properties.templateLink.uri, 'nestedtemplates/strgAccounts.json')]"
-        }
-        ,
+        },
         "deploymentNames": {
             "mgmtGroupDeploymentName": "[take(concat('EntScale-Foundational-Mgs', '-' , guid(parameters('enterpriseScaleCompanyPrefix'))), 64)]"
         }
@@ -31,6 +30,7 @@
                     "contentVersion": "1.0.0.0",
                     "uri": "[variables('deploymentUris').managementGroups]"
                 },
+                "location": "[deployment().location]",
                 "parameters": {
                     "topLevelManagementGroupPrefix": {
                         "value": "[parameters('enterpriseScaleCompanyPrefix')]"
