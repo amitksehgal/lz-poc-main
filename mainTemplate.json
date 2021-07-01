@@ -23,7 +23,7 @@
         {
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2019-10-01",
-            "name": "[variables('deploymentNames').mgmtGroupDeploymentName]",
+            "name": "testdeployment",
             "location": "[deployment().location]",
             "properties": {
                 "mode": "Incremental",
