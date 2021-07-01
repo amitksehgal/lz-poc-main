@@ -24,13 +24,13 @@
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2019-10-01",
             "name": "[variables('deploymentNames').mgmtGroupDeploymentName]",
+            "location": "[deployment().location]",
             "properties": {
                 "mode": "Incremental",
                 "templateLink": {
                     "contentVersion": "1.0.0.0",
                     "uri": "[variables('deploymentUris').managementGroups]"
                 },
-                "location": "[deployment().location]",
                 "parameters": {
                     "topLevelManagementGroupPrefix": {
                         "value": "[parameters('enterpriseScaleCompanyPrefix')]"
